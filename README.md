@@ -35,3 +35,17 @@ do
   CrossMap.py gff crossmap/hg19ToHg38.over.chain.gz ${file} hg38/${event}.hg38.gff3
 done
 ```
+
+## index the gff3 files
+
+```bash
+for file in hg38/*.gff3
+do
+    index_gff --index $file hg38/indexed/`basename $file .hg38.gff3`
+done
+```
+
+# File descriptions
+
+1. `hg38-miso-events.tar.gz`: gff3 files of the events for use with MISO
+2. `hg38-miso-events-withindex.tar.gz`: gff3 files of the events plus the MISO index
